@@ -1,52 +1,68 @@
-# GUT-AI: Digestive Health Prediction System
-## 🌟 Features
 
-- **Health Prediction**: ML model (Decision Tree) analyzes 14 health parameters
-- **AI Analysis**: Gemini integration for personalized recommendations
-- **Diet Plans**: Custom meal routines based on user profile
-- **Risk Alerts**: Early warning sign identification
-- **Hydration Guide**: Personalized water intake schedule
 
-## 🛠 Tech Stack
+---
+
+# 🌿 GUT-AI: Digestive Health Prediction System  
+
+## 🌟 Features  
+
+- **Health Prediction** 🩺 – ML model (Decision Tree) analyzes 14 health parameters  
+- **AI Analysis** 🤖 – Gemini integration for personalized recommendations  
+- **Diet Plans** 🍽️ – Custom meal routines based on user profile  
+- **Risk Alerts** ⚠️ – Early warning sign identification  
+- **Hydration Guide** 💧 – Personalized water intake schedule  
+
+---
+
+## 🛠 Tech Stack  
 
 ```text
-Backend: FastAPI
-ML: Scikit-learn, Pandas
-AI: Google Generative AI (Gemini)
-Data: Label Encoded CSV
+Backend: FastAPI  
+ML: Scikit-learn, Pandas  
+AI: Google Generative AI (Gemini)  
+Data: Label Encoded CSV  
 ```
 
-## 🚀 Quick Start
+---
 
-### 1. Clone & Setup
+## 🚀 Quick Start  
+
+### 1️⃣ Clone & Setup  
+
 ```bash
 git clone https://github.com/yourusername/gut-ai.git
 cd gut-ai
 python -m venv .venv
+```
 
-# Linux/Mac
+#### Activate Virtual Environment  
+
+**Linux/Mac:**  
+```bash
 source .venv/bin/activate
+```  
 
-# Windows
+**Windows:**  
+```bash
 .venv\Scripts\activate
+```  
 
-    Install Dependencies
+### 2️⃣ Install Dependencies  
 
-bash
-Copy
-
+```bash
 pip install -r requirements.txt
+```  
 
-    Configure Environment
+### 3️⃣ Configure Environment  
 
-bash
-Copy
-
+```bash
 echo "GEMINI_API_KEY=your_api_key" > .env
+```  
 
-    Run Server
+### 4️⃣ Run the Server  
 
-bash
-Copy
-
+```bash
 uvicorn app.main:app --reload
+```  
+
+---
