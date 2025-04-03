@@ -15,18 +15,20 @@ ML: Scikit-learn, Pandas
 AI: Google Generative AI (Gemini)
 Data: Label Encoded CSV
 ```
-🚀 Quick Start
 
-    Clone & Setup
+## 🚀 Quick Start
 
-bash
-Copy
-
+### 1. Clone & Setup
+```bash
 git clone https://github.com/yourusername/gut-ai.git
 cd gut-ai
 python -m venv .venv
-source .venv/bin/activate  # Linux/Mac
-.venv\Scripts\activate  # Windows
+
+# Linux/Mac
+source .venv/bin/activate
+
+# Windows
+.venv\Scripts\activate
 
     Install Dependencies
 
