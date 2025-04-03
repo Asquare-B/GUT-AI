@@ -1,0 +1,23 @@
+<!-- enrollment-form.component.html -->
+<div class="enrollment-container">
+    <h1>Health Assessment Enrollment</h1>
+    
+    <form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()" class="enrollment-form">
+      <!-- Question 1 -->
+      
+  
+      <div class="form-actions">
+        <button type="submit" class="submit-btn" [disabled]="isSubmitting" onclick="">
+          {{ isSubmitting ? 'Submitting...' : 'Submit Enrollment' }}
+        </button>
+      </div>
+  
+      <div *ngIf="submissionSuccess" class="success-message">
+        Thank you! Your enrollment has been submitted successfully.
+      </div>
+  
+      <div *ngIf="submissionError" class="error-message">
+        There was an error submitting your enrollment. Please try again.
+      </div>
+    </form>
+  </div>

@@ -1,0 +1,219 @@
+<app-nav-header></app-nav-header>
+<div class="enrollment-container">
+    <div class="enrollment-card">
+      <div class="header">
+        <h1>Gut AI Profile Enrollment</h1>
+        <p>Help us understand your microbiome to generate personalized insights</p>
+      </div>
+  
+      <form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()" class="enrollment-form">
+
+          <div class="form-group" [class.invalid]="enrollmentForm.get('ageGroup')?.invalid && enrollmentForm.get('ageGroup')?.touched">
+            <label>1. What is your age group? *</label>
+            <select formControlName="ageGroup" class="form-control">
+              <option value="" disabled selected>Select age group</option>
+              <option value="6-18">6 - 18 years</option>
+              <option value="19-35">19 - 35 years</option>
+              <option value="36-55">36 - 55 years</option>
+              <option value="55+">55+ years</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('ageGroup')?.invalid && enrollmentForm.get('ageGroup')?.touched">
+              Please select your age group
+            </div>
+          </div>
+      
+          <!-- Question 2 -->
+          <div class="form-group" [class.invalid]="enrollmentForm.get('gender')?.invalid && enrollmentForm.get('gender')?.touched">
+            <label>2. What is your gender? *</label>
+            <div class="radio-group">
+              <label *ngFor="let option of ['Male', 'Female']">
+                <input type="radio" formControlName="gender" [value]="option">
+                {{ option }}
+              </label>
+            </div>
+            <div class="error-message" *ngIf="enrollmentForm.get('gender')?.invalid && enrollmentForm.get('gender')?.touched">
+              Please select your gender
+            </div>
+          </div>
+      
+          <!-- Question 3 -->
+          <div class="form-group" [class.invalid]="enrollmentForm.get('dietType')?.invalid && enrollmentForm.get('dietType')?.touched">
+            <label>3. How would you describe your typical diet? *</label>
+            <select formControlName="dietType" class="form-control">
+              <option value="" disabled selected>Select diet type</option>
+              <option value="whole">Mostly whole foods (fruits, vegetables, whole grains)</option>
+              <option value="mixed">A mix of whole foods and processed foods</option>
+              <option value="processed">Mostly processed and fast foods</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('dietType')?.invalid && enrollmentForm.get('dietType')?.touched">
+              Please select your diet type
+            </div>
+          </div>
+      
+          <!-- Continue with all 14 questions following the same pattern -->
+          <!-- Question 4 -->
+          <div class="form-group" [class.invalid]="enrollmentForm.get('fiberConsumption')?.invalid && enrollmentForm.get('fiberConsumption')?.touched">
+            <label>4. How often do you consume foods high in fiber? *</label>
+            <select formControlName="fiberConsumption" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="daily">Daily</option>
+              <option value="2-3">2-3 times a week</option>
+              <option value="rarely">Rarely or never</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('fiberConsumption')?.invalid && enrollmentForm.get('fiberConsumption')?.touched">
+              Please select frequency
+            </div>
+          </div>
+          <div class="form-group" [class.invalid]="enrollmentForm.get('fermentedFoods')?.invalid && enrollmentForm.get('fermentedFoods')?.touched">
+            <label>5. Do you include fermented foods in your diet? (e.g., yogurt, buttermilk, lassi, etc)?</label>
+            <select formControlName="fermentedFoods" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="yes">Yes, regularly</option>
+              <option value="occasionally">Occasionally (min once a week)</option>
+              <option value="no">No, never</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('fermentedFoods')?.invalid && enrollmentForm.get('fermentedFoods')?.touched">
+              Please select frequency
+            </div>
+          </div>
+          
+          <div class="form-group" [class.invalid]="enrollmentForm.get('waterIntake')?.invalid && enrollmentForm.get('waterIntake')?.touched">
+            <label>6. On average, how many liters of water do you consume per day?</label>
+            <select formControlName="waterIntake" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="4">4 or more</option>
+              <option value="1-3">1 to 3</option>
+              <option value="0">1 or less</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('waterIntake')?.invalid && enrollmentForm.get('waterIntake')?.touched">
+              Please select frequency
+            </div>
+          </div>
+
+          <div class="form-group" [class.invalid]="enrollmentForm.get('alcoholConsumption')?.invalid && enrollmentForm.get('alcoholConsumption')?.touched">
+            <label>7. How often do you consume alcoholic beverages?</label>
+            <select formControlName="alcoholConsumption" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="rarely">Rarely or never</option>
+              <option value="occasionally">Occasionally (1-2 times a week)</option>
+              <option value="regularly">Regularly (3 or more times a week)</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('alcoholConsumption')?.invalid && enrollmentForm.get('alcoholConsumption')?.touched">
+              Please select frequency
+            </div>
+          </div>
+
+          <div class="form-group" [class.invalid]="enrollmentForm.get('alcoholConsumption')?.invalid && enrollmentForm.get('alcoholConsumption')?.touched">
+            <label>7. How often do you consume alcoholic beverages?</label>
+            <select formControlName="alcoholConsumption" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="rarely">Rarely or never</option>
+              <option value="occasionally">Occasionally (1-2 times a week)</option>
+              <option value="regularly">Regularly (3 or more times a week)</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('alcoholConsumption')?.invalid && enrollmentForm.get('alcoholConsumption')?.touched">
+              Please select frequency
+            </div>
+          </div>
+
+          <div class="form-group" [class.invalid]="enrollmentForm.get('exerciseFrequency')?.invalid && enrollmentForm.get('exerciseFrequency')?.touched">
+            <label>8. Do you engage in regular physical exercise? (e.g., walking, running, workout)</label>
+            <select formControlName="exerciseFrequency" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="yes">Yes, multiple times a week</option>
+              <option value="occasionally">Occasionally</option>
+              <option value="no">No, rarely or never</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('exerciseFrequency')?.invalid && enrollmentForm.get('exerciseFrequency')?.touched">
+              Please select frequency
+            </div>
+          </div>
+
+          <div class="form-group" [class.invalid]="enrollmentForm.get('sleepPatterns')?.invalid && enrollmentForm.get('sleepPatterns')?.touched">
+            <label>9. How would you describe your sleep patterns?</label>
+            <select formControlName="sleepPatterns" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="regular">My sleep patterns are set and regular</option>
+              <option value="vary">My sleep patterns vary</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('sleepPatterns')?.invalid && enrollmentForm.get('sleepPatterns')?.touched">
+              Please select frequency
+            </div>
+          </div>
+
+          <div class="form-group" [class.invalid]="enrollmentForm.get('stressLevel')?.invalid && enrollmentForm.get('stressLevel')?.touched">
+            <label>10. How would you rate your stress levels on a daily basis?</label>
+            <select formControlName="stressLevel" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="low">Low</option>
+              <option value="moderate">Moderate</option>
+              <option value="high">High</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('stressLevel')?.invalid && enrollmentForm.get('stressLevel')?.touched">
+              Please select frequency
+            </div>
+          </div>
+
+          <div class="form-group" [class.invalid]="enrollmentForm.get('medicineUsage')?.invalid && enrollmentForm.get('medicineUsage')?.touched">
+            <label>11. How often do you consume allopathic medicines?</label>
+            <select formControlName="medicineUsage" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="never">Rarely or never</option>
+              <option value="occasionally">Occasionally (Once in 2 months)</option>
+              <option value="frequently">Frequently (Once in a month)</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('medicineUsage')?.invalid && enrollmentForm.get('medicineUsage')?.touched">
+              Please select frequency
+            </div>
+          </div>
+
+          <div class="form-group" [class.invalid]="enrollmentForm.get('digestiveIssues')?.invalid && enrollmentForm.get('digestiveIssues')?.touched">
+            <label>12. How often do you experience digestive discomfort (e.g., bloating, gas, indigestion)?</label>
+            <select formControlName="digestiveIssues" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="never">Rarely or never</option>
+              <option value="occasionally">Occasionally (1-2 times a month)</option>
+              <option value="frequently">Frequently (1-3 times a week)</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('digestiveIssues')?.invalid && enrollmentForm.get('digestiveIssues')?.touched">
+              Please select frequency
+            </div>
+          </div>
+
+          <div class="form-group" [class.invalid]="enrollmentForm.get('bowelMovement')?.invalid && enrollmentForm.get('bowelMovement')?.touched">
+            <label>13. How often do you have a bowel movement (passing stool) in a typical week?</label>
+            <select formControlName="bowelMovement" class="form-control">
+              <option value="" disabled selected>Select frequency</option>
+              <option value="once">Once a day</option>
+              <option value="2-3">2-3 times a week</option>
+              <option value="less-2">Less than 2 times a week</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('bowelMovement')?.invalid && enrollmentForm.get('bowelMovement')?.touched">
+              Please select frequency
+            </div>
+          </div>
+      
+          <!-- Question 14 -->
+          <div class="form-group" [class.invalid]="enrollmentForm.get('stoolConsistency')?.invalid && enrollmentForm.get('stoolConsistency')?.touched">
+            <label>14. How would you describe the consistency of your stool most of the time? *</label>
+            <select formControlName="stoolConsistency" class="form-control">
+              <option value="" disabled selected>Select consistency</option>
+              <option value="soft">Soft, well-formed, and easy to pass</option>
+              <option value="loose">Loose or watery, lacking form</option>
+              <option value="hard">Hard, pellet-like, or difficult to pass</option>
+            </select>
+            <div class="error-message" *ngIf="enrollmentForm.get('stoolConsistency')?.invalid && enrollmentForm.get('stoolConsistency')?.touched">
+              Please select stool consistency
+            </div>
+          </div>
+          <div class="form-actions">
+            <button type="submit" class="submit-btn" [disabled]="isSubmitting" onclick="">
+              <span *ngIf="!isSubmitting">Submit Enrollment</span>
+              <span *ngIf="isSubmitting">Processing...</span>
+            </button>
+          </div>
+      </form>
+    </div>
+  </div>
+
+  <app-page-footer></app-page-footer>

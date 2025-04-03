@@ -1,0 +1,38 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    
+  }
+  
+  #name{
+    cursor: default;
+    font-size: 42px;
+    font-weight: 500;
+    font-family: cooper;
+    margin-left: 50px;
+    color: rgb(0, 119, 255);
+  }
+  
+  .menu-list{
+    margin: 15px 0px 15px 20px;
+  }
+  
+  .menu-list a{
+    margin: 10px 10px;
+    padding: 12px 15px;
+    color: rgb(13, 121, 245);
+    border-radius: 10px;
+    font-weight: 600;
+    font-size: 20px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    font-family: 'Times New Roman', Times, serif;
+  }
+  
+  .menu-list a:hover{
+    cursor: pointer;
+    box-shadow: inset 0 0 5px #0a87f5,
+                inset 0 0 10px #85c3fa,
+                inset 0 0 15px #b6dbfc;
+  }

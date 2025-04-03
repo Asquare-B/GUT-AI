@@ -1,0 +1,85 @@
+
+
+.card-outer{
+    opacity: 0.3;
+    }
+    
+    .card{
+        padding: 40px;
+        background-color: rgba(127, 255, 212, 0.137);
+        opacity: 1;
+    }
+    .parts{
+        display: flex;
+        flex-direction: row;
+        padding: 20px;
+    }
+    
+    .parts #part1{
+        max-width: 65%;
+    }
+    
+    img{
+        height: 230px;
+        padding: 10px;
+        margin-left: 50px;
+    }
+    
+    .parts #part2{
+        padding-top: 10px;
+        margin-left: 50px;
+        position: relative;
+    }
+    @media (max-width: 1200px) {
+        .parts{
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            flex: 1;
+            
+        }
+        .parts #part1{
+            max-width: 100%;
+        }
+        .parts #part2{
+            display: none;
+        }
+      
+    }
+    
+    #img2{
+        padding-left: 200px;
+    }
+    
+    
+    .card .data p{
+        padding-top: 15px;
+        margin-left: 20px;
+    }
+    
+    .card .reasoncards{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding-left: 10px;
+        padding-top: 20px;
+    }
+    
+    .card .reasoncards i {
+        margin-top: 10px;
+        margin-bottom: 5px;
+        padding: 10px;
+        align-items: center;
+        height: 50px;
+        width: 50px;
+        font-size: 23px;
+        border-radius: 40%;
+        border: 1px solid;
+        display: flex;
+        justify-content: center;
+    }
+    
+    .card .reasoncards .content{
+        padding-left: 20px;
+        max-width: 80%;
+    }
