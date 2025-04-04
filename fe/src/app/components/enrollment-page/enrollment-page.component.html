@@ -1,13 +1,12 @@
-<app-nav-header></app-nav-header>
-<div class="enrollment-container">
+<section *ngIf="!showResult">
+  <div class="enrollment-container">
     <div class="enrollment-card">
       <div class="header">
         <h1>Gut AI Profile Enrollment</h1>
         <p>Help us understand your microbiome to generate personalized insights</p>
       </div>
-  
       <form [formGroup]="enrollmentForm" (ngSubmit)="onSubmit()" class="enrollment-form">
-
+  
           <div class="form-group" [class.invalid]="enrollmentForm.get('ageGroup')?.invalid && enrollmentForm.get('ageGroup')?.touched">
             <label>1. What is your age group? *</label>
             <select formControlName="ageGroup" class="form-control">
@@ -89,7 +88,7 @@
               Please select frequency
             </div>
           </div>
-
+  
           <div class="form-group" [class.invalid]="enrollmentForm.get('alcoholConsumption')?.invalid && enrollmentForm.get('alcoholConsumption')?.touched">
             <label>7. How often do you consume alcoholic beverages?</label>
             <select formControlName="alcoholConsumption" class="form-control">
@@ -102,7 +101,7 @@
               Please select frequency
             </div>
           </div>
-
+  
           <div class="form-group" [class.invalid]="enrollmentForm.get('alcoholConsumption')?.invalid && enrollmentForm.get('alcoholConsumption')?.touched">
             <label>7. How often do you consume alcoholic beverages?</label>
             <select formControlName="alcoholConsumption" class="form-control">
@@ -115,7 +114,7 @@
               Please select frequency
             </div>
           </div>
-
+  
           <div class="form-group" [class.invalid]="enrollmentForm.get('exerciseFrequency')?.invalid && enrollmentForm.get('exerciseFrequency')?.touched">
             <label>8. Do you engage in regular physical exercise? (e.g., walking, running, workout)</label>
             <select formControlName="exerciseFrequency" class="form-control">
@@ -128,7 +127,7 @@
               Please select frequency
             </div>
           </div>
-
+  
           <div class="form-group" [class.invalid]="enrollmentForm.get('sleepPatterns')?.invalid && enrollmentForm.get('sleepPatterns')?.touched">
             <label>9. How would you describe your sleep patterns?</label>
             <select formControlName="sleepPatterns" class="form-control">
@@ -140,7 +139,7 @@
               Please select frequency
             </div>
           </div>
-
+  
           <div class="form-group" [class.invalid]="enrollmentForm.get('stressLevel')?.invalid && enrollmentForm.get('stressLevel')?.touched">
             <label>10. How would you rate your stress levels on a daily basis?</label>
             <select formControlName="stressLevel" class="form-control">
@@ -153,7 +152,7 @@
               Please select frequency
             </div>
           </div>
-
+  
           <div class="form-group" [class.invalid]="enrollmentForm.get('medicineUsage')?.invalid && enrollmentForm.get('medicineUsage')?.touched">
             <label>11. How often do you consume allopathic medicines?</label>
             <select formControlName="medicineUsage" class="form-control">
@@ -166,7 +165,7 @@
               Please select frequency
             </div>
           </div>
-
+  
           <div class="form-group" [class.invalid]="enrollmentForm.get('digestiveIssues')?.invalid && enrollmentForm.get('digestiveIssues')?.touched">
             <label>12. How often do you experience digestive discomfort (e.g., bloating, gas, indigestion)?</label>
             <select formControlName="digestiveIssues" class="form-control">
@@ -179,7 +178,7 @@
               Please select frequency
             </div>
           </div>
-
+  
           <div class="form-group" [class.invalid]="enrollmentForm.get('bowelMovement')?.invalid && enrollmentForm.get('bowelMovement')?.touched">
             <label>13. How often do you have a bowel movement (passing stool) in a typical week?</label>
             <select formControlName="bowelMovement" class="form-control">
@@ -215,5 +214,8 @@
       </form>
     </div>
   </div>
-
+  </section>
+  <section *ngIf="showResult">
+    <app-diet-summary [formattedResults]="analysisResult.analysis"></app-diet-summary>
+  </section>
   <app-page-footer></app-page-footer>
