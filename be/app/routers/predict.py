@@ -34,7 +34,7 @@ async def predict_with_analysis(input_data: PredictionInput):
             user_input=input_data.dict(),
             prediction=prediction_dict  # Use the raw dict here
         )
-        
+        print(analysis)
         return {
             "prediction": prediction_result,
             "analysis": analysis
