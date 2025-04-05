@@ -1,5 +1,6 @@
 from enum import Enum
 from pydantic import BaseModel, Field
+from datetime import datetime
 
 class AgeGroup(str, Enum):
     group_6_18 = "6 - 18 years"
@@ -57,7 +58,7 @@ class MedicineConsumption(str, Enum):
 
 class BowelMovement(str, Enum):
     daily = "Once a day"
-    two_three_week = "3-4 times a week"
+    three_four_week = "3-4 times a week"  # Updated value
     less_than_two = "Less than 2 times a week"
 
 class StoolConsistency(str, Enum):
@@ -81,7 +82,6 @@ class PredictionInput(BaseModel):
     bowel_movement_frequency: BowelMovement
     stool_consistency: StoolConsistency
 
-    # Convert model to dictionary with original column names
     def to_model_input(self):
         return {
             'What is your age group?': self.age_group.value,
@@ -104,8 +104,6 @@ class PredictionResult(BaseModel):
     confidence: float
     model_version: str
 
-
-from datetime import datetime
 
 class GeminiAnalysisResponse(BaseModel):
     prediction: PredictionResult

@@ -1,8 +1,85 @@
 <!-- results.component.html -->
 <div class="results-container">
-    <h1>Health Assessment Results</h1>
-    
-    <div class="results-content">
-      <textarea class="results-textarea" readonly>{{ formattedResults }}</textarea>
+  <h1 class="main-heading">Your Gut Health Analysis</h1>
+  
+  <div class="results-content">
+    <!-- Prediction Section -->
+    <div class="results-section prediction-card">
+      <h2><span class="emoji">📊</span> Assessment Summary</h2>
+      <div class="prediction-details">
+        <div class="prediction-item">
+          <span class="label">Recommendation Frequency:</span>
+          
+          <span class="value highlight">{{ formattedResults.prediction.prediction }}</span>
+        </div>
+        <div class="prediction-item">
+          <span class="label">Confidence Level:</span>
+          <span class="value">{{ formattedResults.prediction.confidence * 100 }}%</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Key Recommendations -->
+    <div class="results-section">
+      <h2><span class="emoji">📋</span> Key Recommendations</h2>
+      <div class="recommendation-grid">
+        <div class="recommendation-card" *ngFor="let rec of formattedResults.analysis.lifestyleChanges">
+          <div class="rec-icon">⭐</div>
+          <div class="rec-text">{{ rec }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Diet Plan -->
+    <div class="results-section diet-plan">
+      <h2><span class="emoji">🥗</span> Personalized Diet Plan</h2>
+      <div class="meal-section">
+        <h3>Breakfast Options</h3>
+        <ul>
+          <li *ngFor="let option of formattedResults.analysis.dietPlan.breakfast">
+            <span class="meal-emoji">🍳</span> {{ option }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="meal-section">
+        <h3>Lunch Options</h3>
+        <ul>
+          <li *ngFor="let option of formattedResults.analysis.dietPlan.lunch">
+            <span class="meal-emoji">🥪</span> {{ option }}
+          </li>
+        </ul>
+      </div>
+
+      <div class="meal-section">
+        <h3>Dinner Options</h3>
+        <ul>
+          <li *ngFor="let option of formattedResults.analysis.dietPlan.dinner">
+            <span class="meal-emoji">🍲</span> {{ option }}
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Hydration Guide -->
+    <div class="results-section hydration-guide">
+      <h2><span class="emoji">💧</span> Hydration Plan</h2>
+      <div class="hydration-schedule">
+        <div class="hydration-step" *ngFor="let step of formattedResults.analysis.hydration">
+          <div class="time">{{ step.time }}</div>
+          <div class="amount">{{ step.amount }}</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Warning Signs -->
+    <div class="results-section warnings">
+      <h2><span class="emoji">⚠️</span> Important Warning Signs</h2>
+      <ul class="warning-list">
+        <li *ngFor="let warning of formattedResults.analysis.warnings">
+          {{ warning }}
+        </li>
+      </ul>
     </div>
   </div>
+</div>
