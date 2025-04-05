@@ -3,9 +3,11 @@ import { CommonModule } from '@angular/common';
 import { Router } from '@angular/router';
 import { AnalysisService } from '../../services/analysis.service';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+import { MarkdownModule } from 'ngx-markdown';
 @Component({
   selector: 'app-diet-summary',
-  imports: [CommonModule, HttpClientModule],
+  imports: [CommonModule, HttpClientModule,MarkdownModule],
   templateUrl: './diet-summary.component.html',
   styleUrl: './diet-summary.component.scss',
   providers: [HttpClient, AnalysisService]
