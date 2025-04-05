@@ -1,8 +1,18 @@
 <!-- results.component.html -->
-<div class="results-container">
+<!-- <div class="results-container">
     <h1>Health Assessment Results</h1>
     
     <div class="results-content">
       <textarea class="results-textarea" readonly>{{ formattedResults }}</textarea>
     </div>
+  </div> -->
+  <!-- results.component.html -->
+<div class="max-w-3xl mx-auto mt-10 p-6 bg-white rounded-xl shadow-md">
+  <h1 class="text-2xl font-bold mb-4 text-center text-blue-600">🩺 Health Assessment Results</h1>
+
+  <div class="bg-gray-100 p-4 rounded-lg overflow-y-auto max-h-[600px]">
+    <!-- <pre class="whitespace-pre-wrap text-gray-800 font-mono text-sm">{{ formattedResults }}</pre> -->
+     <markdown [data]="formattedResults"></markdown>
+
   </div>
+</div>
