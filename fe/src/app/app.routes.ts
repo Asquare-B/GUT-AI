@@ -3,6 +3,7 @@ import { HomeLandingComponent } from './components/home-landing/home-landing.com
 import { ProfileHomeComponent } from './components/profile-home/profile-home.component';
 import { EnrollmentPageComponent } from './components/enrollment-page/enrollment-page.component';
 import { EnrollmentFormComponent } from './components/enrollment-form/enrollment-form.component';
+import { DietSummaryComponent } from './components/diet-summary/diet-summary.component';
 
 
 const routeConfig: Routes = [
@@ -16,5 +17,10 @@ const routeConfig: Routes = [
       component: EnrollmentPageComponent,
       title: 'Profile',
     },
+    {
+      path: 'result',
+      component: DietSummaryComponent,
+      title: 'Summary',
+    }
   ];
   export default routeConfig;
